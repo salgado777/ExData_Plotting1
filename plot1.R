@@ -1,4 +1,4 @@
-my_data <- read.table("household_power_consumption.txt", header=TRUE, sep=";")
+my_data <- read.table("../rdata/household_power_consumption.txt", header=TRUE, sep=";", na.strings="?")
 my_data$Date <- as.Date(my_data$Date, "%d/%m/%Y")
 rel_data <- subset(my_data, my_data$Date > "2007-01-31" & my_data$Date < "2007-02-03")
 rel_data$Global_active_power <- as.numeric(as.character(rel_data$Global_active_power))
